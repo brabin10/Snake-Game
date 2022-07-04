@@ -3,7 +3,10 @@ package com.rabincodes;
 public class SnakeGame {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//Instance of GrameFrame class
+		//shortcut to create instance
+		new GameFrame();
 
 	}
 
