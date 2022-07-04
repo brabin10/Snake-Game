@@ -60,6 +60,16 @@ public class GamePanel extends JPanel  implements ActionListener{
 		g.setColor(Color.red);
 		g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 		
+		for(int i =0; i< bodyParts; i++) {
+			if( i==0 ) {
+				g.setColor(Color.green);
+				g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+			}
+			else {
+				g.setColor(new Color(45,180,0));
+				g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+			}
+		}
 	}
 	
 	public void newApple() { //generates the coordinates of a new apple
@@ -104,7 +114,13 @@ public class GamePanel extends JPanel  implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		
+		if(running) {
+			move();
+			checkApple();
+			checkCollisions();
+			
+		}
+		repaint();
 		
 	}
 	
